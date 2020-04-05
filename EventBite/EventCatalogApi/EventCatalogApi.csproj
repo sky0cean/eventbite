@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200404223436_UpdatedEvent.cs" />
+    <Compile Remove="Migrations\20200404223436_UpdatedEvent.Designer.cs" />
+    <Compile Remove="Migrations\20200404225314_AddEventContents.cs" />
+    <Compile Remove="Migrations\20200404225314_AddEventContents.Designer.cs" />
+    <Compile Remove="Migrations\20200405024254_AddedPriceDate.cs" />
+    <Compile Remove="Migrations\20200405024254_AddedPriceDate.Designer.cs" />
+    <Compile Remove="Migrations\20200405025311_AddedPriceDate.cs" />
+    <Compile Remove="Migrations\20200405025311_AddedPriceDate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />

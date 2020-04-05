@@ -14,7 +14,12 @@ namespace EventCatalogApi.Domain
         public string PictureUrl { get; set; }
         public int CatalogCategoryId { get; set; }
         public int CatalogFormatId { get; set; }
+        public int CatalogDateId { get; set; }
+        public int CatalogPriceId { get; set; }
         public virtual CatalogCategory CatalogCategory { get; set; }
         public virtual CatalogFormat CatalogFormat { get; set; }
+        public virtual CatalogDate CatalogDate { get; set; }
+        public virtual CatalogPrice CatalogPrice { get; set; }
+
     }
 }

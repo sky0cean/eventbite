@@ -70,7 +70,40 @@ namespace EventCatalogApi.Data
                     .WithMany()
                     .HasForeignKey(c => c.CatalogFormatId);
 
+                e.HasOne(c => c.CatalogDate)
+                   .WithMany()
+                   .HasForeignKey(c => c.CatalogDateId);
+
+                e.HasOne(c => c.CatalogPrice)
+                   .WithMany()
+                   .HasForeignKey(c => c.CatalogPriceId);
+
             });
+
+            modelBuilder.Entity<CatalogDate>(e =>
+            {
+                e.ToTable("CatalogDates");
+                e.Property(d => d.Id)
+                    .IsRequired()
+                    .UseHiLo("catalog_date_hilo");
+
+                e.Property(d => d.Date)
+                    .IsRequired()
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<CatalogPrice>(e =>
+            {
+                e.ToTable("CatalogPrices");
+                e.Property(p => p.Id)
+                    .IsRequired()
+                    .UseHiLo("catalog_price_hilo");
+
+                e.Property(p => p.Price)
+                    .IsRequired()
+                    .HasMaxLength(100);
+            });
+
         }
 
     }
