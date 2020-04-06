@@ -14,6 +14,14 @@
     <Compile Remove="Migrations\20200405024254_AddedPriceDate.Designer.cs" />
     <Compile Remove="Migrations\20200405025311_AddedPriceDate.cs" />
     <Compile Remove="Migrations\20200405025311_AddedPriceDate.Designer.cs" />
+    <Compile Remove="Migrations\20200405233347_V2.cs" />
+    <Compile Remove="Migrations\20200405233347_V2.Designer.cs" />
+    <Compile Remove="Migrations\20200405233641_V2.cs" />
+    <Compile Remove="Migrations\20200405233641_V2.Designer.cs" />
+    <Compile Remove="Migrations\20200405234212_V2.cs" />
+    <Compile Remove="Migrations\20200405234212_V2.Designer.cs" />
+    <Compile Remove="Migrations\20200405235045_V2.cs" />
+    <Compile Remove="Migrations\20200405235045_V2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

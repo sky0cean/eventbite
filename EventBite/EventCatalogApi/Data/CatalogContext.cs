@@ -48,6 +48,31 @@ namespace EventCatalogApi.Data
                     .HasMaxLength(100);
             });
 
+            modelBuilder.Entity<CatalogDate>(e =>
+            {
+                e.ToTable("CatalogDates");
+                e.Property(d => d.Id)
+                    .IsRequired()
+                    .UseHiLo("catalog_date_hilo");
+
+                e.Property(d => d.Date)
+                    .IsRequired()
+                    .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<CatalogPrice>(e =>
+            {
+                e.ToTable("CatalogPrices");
+                e.Property(p => p.Id)
+                    .IsRequired()
+                    .UseHiLo("catalog_price_hilo");
+
+                e.Property(p => p.Price)
+                    .IsRequired()
+                    .HasMaxLength(100);
+            });
+
+
             modelBuilder.Entity<CatalogItem>(e =>
             {
                 e.ToTable("Catalog");
@@ -80,30 +105,7 @@ namespace EventCatalogApi.Data
 
             });
 
-            modelBuilder.Entity<CatalogDate>(e =>
-            {
-                e.ToTable("CatalogDates");
-                e.Property(d => d.Id)
-                    .IsRequired()
-                    .UseHiLo("catalog_date_hilo");
-
-                e.Property(d => d.Date)
-                    .IsRequired()
-                    .HasMaxLength(100);
-            });
-
-            modelBuilder.Entity<CatalogPrice>(e =>
-            {
-                e.ToTable("CatalogPrices");
-                e.Property(p => p.Id)
-                    .IsRequired()
-                    .UseHiLo("catalog_price_hilo");
-
-                e.Property(p => p.Price)
-                    .IsRequired()
-                    .HasMaxLength(100);
-            });
-
+            
         }
 
     }
