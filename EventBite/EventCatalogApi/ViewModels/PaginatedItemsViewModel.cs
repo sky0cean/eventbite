@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace EventCatalogApi.ViewModels
 {
-    public class PaginatedItemsViewModel
+    public class PaginatedItemsViewModel<TEntity>
+        where TEntity : class
     {
         public int PageSize { get; set; }
         public int PageIndex { get; set; }
         public long Count { get; set; }
-        public int MyProperty { get; set; }
+        public IEnumerable<TEntity> Data { get; set; }
     }
 }

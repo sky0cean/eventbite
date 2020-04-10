@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EventCatalogApi.Data;
 using EventCatalogApi.Domain;
+using EventCatalogApi.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,13 +30,22 @@ namespace EventCatalogApi.Controllers
             [FromQuery]int pageIndex = 0,
             [FromQuery]int pageSize = 10)
         {
+            var itemsCount = await _context.CatalogItems.LongCountAsync();
 
             var items = await _context.CatalogItems
                                .Skip(pageIndex * pageSize)
                                .Take(pageSize)
                                .ToListAsync();
             items = ChangePictureUrl(items);
-            return Ok(items);
+
+            var model = new PaginatedItemsViewModel<CatalogItem>
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Count = itemsCount,
+                Data = items
+            };
+            return Ok(model);
         }
 
         private List<CatalogItem> ChangePictureUrl(List<CatalogItem> items)
