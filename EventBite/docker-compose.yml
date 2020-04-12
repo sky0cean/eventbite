@@ -1,8 +1,19 @@
 version: '3.4'
 
+networks:
+  frontend:
+  backend:
+
 services:
-  eventcatalogapi:
-    image: ${DOCKER_REGISTRY-}eventcatalogapi
+  catalog:
+    image: events/catalogapi
     build:
-      context: .
-      dockerfile: EventCatalogApi/Dockerfile
+      context: .\EventCatalogApi
+      dockerfile: Dockerfile
+    environment:
+      DatabaseServer: mssqlserver
+      DatabaseName: Catalog2Db
+      DatabaseUser: ev
+      DatabasePassword: EventApi(!)
+      ExternalCatalogBaseUrl: http://localhost:51858
+
