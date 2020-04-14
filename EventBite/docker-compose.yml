@@ -13,7 +13,7 @@ services:
     environment:
       DatabaseServer: mssqlserver
       DatabaseName: Catalog2Db
-      DatabaseUser: ev
+      DatabaseUser: sa
       DatabasePassword: EventApi(!)
       ExternalCatalogBaseUrl: http://localhost:6600
     ports:
@@ -29,9 +29,9 @@ services:
     image: "microsoft/mssql-server-linux:latest"
     environment:
       ACCEPT_EULA: Y
-      EV_PASSWORD: EventApi(!)
+      SA_PASSWORD: EventApi(!)
     ports: 
-      - "1445:1433"
+      - "1440:1433"
     container_name: eventssqlserver
     networks: 
       - backend
