@@ -32,12 +32,14 @@ namespace EventCatalogApi.Controllers
         {
             var itemsCount = await _context.CatalogItems.LongCountAsync();
 
+            //Seralization
             var items = await _context.CatalogItems
                                .Skip(pageIndex * pageSize)
                                .Take(pageSize)
                                .ToListAsync();
             items = ChangePictureUrl(items);
 
+            //Deceralization
             var model = new PaginatedItemsViewModel<CatalogItem>
             {
                 PageIndex = pageIndex,
