@@ -6,4 +6,8 @@
     <DockerfileContext>..\EventBite</DockerfileContext>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
