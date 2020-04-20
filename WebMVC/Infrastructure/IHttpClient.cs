@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebMVC.Infrastructure
 {
-    interface IHttpClient
+    public interface IHttpClient
     {
         Task<string> GetStringAsync(string uri,
             string authorizationToken = null,
