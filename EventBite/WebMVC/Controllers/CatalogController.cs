@@ -30,7 +30,11 @@ namespace WebMVC.Controllers
                     ItemsPerPage = itemsOnPage,
                     TotalItems = catalog.Count,
                     TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsOnPage)
-                }
+                },
+
+                Categories = await _service.GetCategoriesAsync(),
+                Formats = await _service.GetFormatsAsync()
+               
             };
 
             return View(vm);

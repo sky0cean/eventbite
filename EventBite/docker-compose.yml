@@ -38,7 +38,7 @@ services:
 
   webMVC:
     build:
-      contect: .\webmvc
+      context: .\webmvc
       dockerfile: Dockerfile
     image: jewels/webmvc
     container_name: webshop

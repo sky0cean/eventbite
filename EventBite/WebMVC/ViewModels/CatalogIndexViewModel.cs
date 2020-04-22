@@ -14,7 +14,7 @@ namespace WebMVC.ViewModels
         public IEnumerable<SelectListItem> Formats { get; set; }
         public IEnumerable<CatalogItem> CatalogItems { get; set; }
 
-        public int? FilterApplied { get; set; }
+        public int? CategoriesFilterApplied { get; set; }
         public int? FormatsFilterApplied { get; set; }
 
     }
