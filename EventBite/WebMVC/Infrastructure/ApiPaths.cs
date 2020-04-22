@@ -14,6 +14,16 @@ namespace WebMVC.Infrastructure
             {
                 return $"{baseUri}items?pageIndex={page}&pageSize={take}";
             }
+
+            public static string GetAllFormats(string baseUri)
+            {
+                return $"{baseUri}catalogformats";
+            }
+
+            public static string GetAllCategories(string baseUri)
+            {
+                return $"{baseUri}catalogCategories";
+            }
         }
 
         public static class Basket

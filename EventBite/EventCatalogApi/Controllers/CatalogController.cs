@@ -57,5 +57,21 @@ namespace EventCatalogApi.Controllers
                     );
             return items;
         }
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> CatalogFormats()
+        {
+            var items = await _context.CatalogFormats.ToListAsync();
+            return Ok(items);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> CatalogCategories()
+        {
+            var items = await _context.CatalogCategories.ToListAsync();
+            return Ok(items);
+        }
     }
 }
