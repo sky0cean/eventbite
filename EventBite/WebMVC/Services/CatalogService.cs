@@ -21,10 +21,11 @@ namespace WebMVC.Services
             _baseUri = $"{config["catalogUrl"]}/api/catalog/";
             _client = client;
         }
-        public async Task<Catalog> GetCatalogItemsAsync(int page, int size)
+        public async Task<Catalog> GetCatalogItemsAsync(int page, int size,
+            int? category, int? format)
         {
             var catalogItemsUri = ApiPaths.Catalog.GetAllCatalogItems(_baseUri,
-                                    page, size);
+                                    page, size, category, format);
             var dataString = await _client.GetStringAsync(catalogItemsUri);
             return JsonConvert.DeserializeObject<Catalog>(dataString);
         }

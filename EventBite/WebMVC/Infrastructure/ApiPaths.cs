@@ -10,8 +10,15 @@ namespace WebMVC.Infrastructure
         public static class Catalog
         {
             public static string GetAllCatalogItems(string baseUri,
-                int page, int take)
+                int page, int take, int? category, int? format)
             {
+                var filterQs = string.Empty;
+                if(category.HasValue || format.HasValue)
+                {
+                    var categoryQs = (category.HasValue) ? category.Value.ToString() : "null";
+                    var formatQs = (format.HasValue) ? format.Value.ToString() : "null";
+                    filterQs = $"/format/{formatQs}/category/{categoryQs}";
+                }
                 return $"{baseUri}items?pageIndex={page}&pageSize={take}";
             }
 
