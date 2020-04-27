@@ -35,6 +35,19 @@ namespace EventCatalogApi
             //Create an instance to connect to physical database
             services.AddDbContext<CatalogContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            services.AddSwaggerGen(options =>
+            {
+                //options.DescribeAllEnumsAsStrings();
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "EventBite - Event Catalog API",
+                    Version = "v1",
+                    Description = "Event catalog microservice"
+                    //TODO:
+                    //Terms of Services
+                });
+            });
             
 
         }
@@ -50,6 +63,11 @@ namespace EventCatalogApi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSwagger()
+                .UseSwaggerUI(e =>
+                {
+                    e.SwaggerEndpoint($"/swagger/v1/swagger.json", "EventCatalogAPI v1");
+                });
 
             app.UseEndpoints(endpoints =>
             {
