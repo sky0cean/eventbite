@@ -15,9 +15,9 @@ services:
       DatabaseName: Catalog2Db
       DatabaseUser: sa
       DatabasePassword: EventApi(!)
-      ExternalCatalogBaseUrl: http://localhost:6600
+      ExternalCatalogBaseUrl: http://localhost:6400
     ports:
-      - "6600:80"
+      - "6400:80"
     container_name: Eventscatalogapi
     networks:
       - backend
@@ -40,7 +40,7 @@ services:
     build:
       context: .\TokenServiceApi
       dockerfile: Dockerfile
-    image: jewels/tokenapi
+    image: events/tokenapi
     logging:
       driver: "json-file"
       options:
@@ -62,10 +62,13 @@ services:
     build:
       context: .\webmvc
       dockerfile: Dockerfile
-    image: jewels/webmvc
+    image: events/webmvc
     container_name: webshop
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       CatalogUrl: http://catalog
+      IdentityUrl: http://192.168.1.4:6500
+      CallBackUrl: http://localhost:5200
     ports:
       - "5200:80"
     networks:
