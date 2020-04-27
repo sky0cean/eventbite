@@ -15,6 +15,8 @@ using Microsoft.IdentityModel.Tokens;
 using WebMVC.Infrastructure;
 using WebMVC.Services;
 
+
+
 namespace WebMVC
 {
     public class Startup
@@ -31,6 +33,7 @@ namespace WebMVC
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
@@ -63,6 +66,7 @@ namespace WebMVC
                 options.Scope.Add("offline_access");
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
+
                     NameClaimType = "name",
                     RoleClaimType = "role"
                 };
@@ -89,6 +93,8 @@ namespace WebMVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseCookiePolicy();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

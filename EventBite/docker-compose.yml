@@ -58,7 +58,7 @@ services:
     depends_on:
       - mssqlserver
 
-  webMVC:
+  webmvc:
     build:
       context: .\webmvc
       dockerfile: Dockerfile
