@@ -47,6 +47,7 @@ namespace EventCatalogApi
                     //TODO:
                     //Terms of Services
                 });
+                options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
             
 
