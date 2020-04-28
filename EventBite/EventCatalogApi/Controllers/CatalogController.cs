@@ -28,7 +28,7 @@ namespace EventCatalogApi.Controllers
         [Route("[action]")]
         public async Task<IActionResult> Items(
             [FromQuery]int pageIndex = 0,
-            [FromQuery]int pageSize = 10)
+            [FromQuery]int pageSize = 9)
         {
             var itemsCount = await _context.CatalogItems.LongCountAsync();
 
@@ -56,7 +56,7 @@ namespace EventCatalogApi.Controllers
             int? catalogFormatId,
             int? catalogCategoryId,
             [FromQuery]int pageIndex = 0,
-            [FromQuery]int pageSize = 10)
+            [FromQuery]int pageSize = 9)
         {
             var root = (IQueryable<CatalogItem>)_context.CatalogItems;
             if (catalogFormatId.HasValue)

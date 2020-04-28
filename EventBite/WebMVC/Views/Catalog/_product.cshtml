@@ -10,8 +10,8 @@
         <span>@Model.Name</span>
     </div>
     <div class="esh-catalog-price">
-        <span>@Model.Price</span>
-        @*<span>@Model.Price.ToString("N2")</span>*@
+        @*<span>@Model.Price</span>*@
+        <span>@Model.Price.ToString("N2")</span>
     </div>
     <input type="hidden" asp-for="@Model.CatalogCategory" name="category" />
     <input type="hidden" asp-for="@Model.CatalogCategoryId" name="categoryId" />

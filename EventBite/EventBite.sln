@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "..\WebMVC\WebMVC.
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "WebMVC\WebMVC.csproj", "{43F6A0FF-472C-4957-8815-62FCE10480F3}"
 >>>>>>> Trial03
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokenServiceApi", "TokenServiceApi\TokenServiceApi.csproj", "{A2106D6F-7D0D-4896-95A9-0FAED8C57B06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,7 +45,14 @@ Global
 		{43F6A0FF-472C-4957-8815-62FCE10480F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43F6A0FF-472C-4957-8815-62FCE10480F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43F6A0FF-472C-4957-8815-62FCE10480F3}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 >>>>>>> Trial03
+=======
+		{A2106D6F-7D0D-4896-95A9-0FAED8C57B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2106D6F-7D0D-4896-95A9-0FAED8C57B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2106D6F-7D0D-4896-95A9-0FAED8C57B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2106D6F-7D0D-4896-95A9-0FAED8C57B06}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Trial05
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,7 +65,11 @@ Global
 		{5594651B-E66C-499D-9AF1-D29FCD73D6FC} = {B31FA1C2-8093-4168-9D9B-311FB30D2D7E}
 =======
 		{43F6A0FF-472C-4957-8815-62FCE10480F3} = {B31FA1C2-8093-4168-9D9B-311FB30D2D7E}
+<<<<<<< HEAD
 >>>>>>> Trial03
+=======
+		{A2106D6F-7D0D-4896-95A9-0FAED8C57B06} = {92787C4D-E853-4192-9457-FF4364984851}
+>>>>>>> Trial05
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FEF7CCA-E20F-49DA-85B5-10F86BDFA195}
