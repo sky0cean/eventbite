@@ -8,6 +8,6 @@ namespace EventCatalogApi.Domain
     public class CatalogPrice
     {
         public int Id { get; set; }
-        public string Price { get; set; }
+        public decimal Price { get; set; }
     }
 }
