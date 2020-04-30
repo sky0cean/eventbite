@@ -36,6 +36,10 @@ namespace EventCatalogApi
             services.AddDbContext<CatalogContext>(options =>
                 options.UseSqlServer(connectionString));
 
+            ////For IIS
+            //services.AddDbContext<CatalogContext>(options =>
+            //    options.UseSqlServer(Configuration["ConnectionString"]));
+
             services.AddSwaggerGen(options =>
             {
                 //options.DescribeAllEnumsAsStrings();

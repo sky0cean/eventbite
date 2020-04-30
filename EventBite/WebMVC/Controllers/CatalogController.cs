@@ -20,7 +20,7 @@ namespace WebMVC.Controllers
             int? formatsFilterApplied)
         {
 
-            var itemsOnPage = 10;
+            var itemsOnPage = 9;
 
             var catalog = await _service.GetCatalogItemsAsync(page ?? 0, itemsOnPage,
                 categoriesFilterApplied, formatsFilterApplied);
