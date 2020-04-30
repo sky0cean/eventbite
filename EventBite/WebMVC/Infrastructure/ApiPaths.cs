@@ -19,7 +19,10 @@ namespace WebMVC.Infrastructure
                     var formatQs = (format.HasValue) ? format.Value.ToString() : "null";
                     filterQs = $"/format/{formatQs}/category/{categoryQs}";
                 }
-                return $"{baseUri}items?pageIndex={page}&pageSize={take}";
+                return $"{baseUri}items{filterQs}?pageIndex={page}&pageSize={take}";
+
+                //I forgot to chenge below to above and filter was not working.
+                //return $"{baseUri}items?pageIndex={page}&pageSize={take}";
             }
 
             public static string GetAllFormats(string baseUri)

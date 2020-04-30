@@ -52,10 +52,8 @@ namespace EventCatalogApi.Controllers
         [HttpGet]
         [Route("[action]/format/{catalogFormatId}/category/{catelogCategoryId}")]
         public async Task<IActionResult> Items(
-            //int? catalogFormatId,
-            //int? catalogCategoryId,
-            int catalogFormatId,
-            int catalogCategoryId,
+            int? catalogFormatId,
+            int? catalogCategoryId,
             [FromQuery]int pageIndex = 0,
             [FromQuery]int pageSize = 9)
         {
