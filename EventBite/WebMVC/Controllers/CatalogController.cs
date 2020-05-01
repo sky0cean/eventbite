@@ -20,26 +20,24 @@ namespace WebMVC.Controllers
             int? formatsFilterApplied)
         {
 
-            var itemsOnPage = 10;
+            var itemsOnPage = 9;
 
             var catalog = await _service.GetCatalogItemsAsync(page ?? 0, itemsOnPage,
                 categoriesFilterApplied, formatsFilterApplied);
             var vm = new CatalogIndexViewModel
             {
                 CatalogItems = catalog.Data,
-                PaginationInfo = new PaginationInfo
-                {
-                    ActualPage = page ?? 0,
-                    ItemsPerPage = itemsOnPage,
-                    TotalItems = catalog.Count,
-                    TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsOnPage)
-                },
-
                 Categories = await _service.GetCategoriesAsync(),
                 Formats = await _service.GetFormatsAsync(),
                 CategoriesFilterApplied = categoriesFilterApplied ?? 0,
-                FormatsFilterApplied = formatsFilterApplied ?? 0
-               
+                FormatsFilterApplied = formatsFilterApplied ?? 0,
+                PaginationInfo = new PaginationInfo
+                {
+                    ActualPage = page ?? 0,
+                    TotalItems = catalog.Count,
+                    ItemsPerPage = itemsOnPage,
+                    TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsOnPage)
+                }   
             };
 
             return View(vm);

@@ -12,14 +12,26 @@ namespace WebMVC.Infrastructure
             public static string GetAllCatalogItems(string baseUri,
                 int page, int take, int? category, int? format)
             {
-                var filterQs = string.Empty;
-                if(category.HasValue || format.HasValue)
+                var filterQs = "";
+                if(format.HasValue)
                 {
-                    var categoryQs = (category.HasValue) ? category.Value.ToString() : "null";
-                    var formatQs = (format.HasValue) ? format.Value.ToString() : "null";
-                    filterQs = $"/format/{formatQs}/category/{categoryQs}";
+                    var categoryQs = (category.HasValue) ? category.Value.ToString() : string.Empty;
+                    filterQs = $"/format/{format.Value}/category/{categoryQs}";
                 }
-                return $"{baseUri}items?pageIndex={page}&pageSize={take}";
+                else if(category.HasValue)
+                {
+                    var categoryQs = (category.HasValue) ? category.Value.ToString() : string.Empty;
+                    filterQs = $"/format/all/category/{categoryQs}";
+                }
+                else
+                {
+                    filterQs = string.Empty;
+                }
+
+                return $"{baseUri}items{filterQs}?pageIndex={page}&pageSize={take}";
+
+                //I forgot to chenge below to above and filter was not working.
+                //return $"{baseUri}items?pageIndex={page}&pageSize={take}";
             }
 
             public static string GetAllFormats(string baseUri)
@@ -29,7 +41,8 @@ namespace WebMVC.Infrastructure
 
             public static string GetAllCategories(string baseUri)
             {
-                return $"{baseUri}catalogCategories";
+                //It was catalog"C"ategory 
+                return $"{baseUri}catalogcategories";
             }
         }
 

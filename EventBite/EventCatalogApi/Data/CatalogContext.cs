@@ -17,8 +17,7 @@ namespace EventCatalogApi.Data
         public DbSet<CatalogCategory> CatalogCategories { get; set; }
         public DbSet<CatalogFormat> CatalogFormats { get; set; }
         public DbSet<CatalogItem> CatalogItems { get; set; }
-        public DbSet<CatalogDate> CatalogDates { get; set; }
-        public DbSet<CatalogPrice> CatalogPrices { get; set; }
+
 
 
         //Model = Table
@@ -53,7 +52,7 @@ namespace EventCatalogApi.Data
                 e.ToTable("Catalog");
                 e.Property(c => c.Id)
                     .IsRequired()
-                    .UseHiLo("catalog_hilo");
+                    .UseHiLo("Catalog_hilo");
 
                 e.Property(c => c.Name)
                     .IsRequired()
@@ -62,13 +61,15 @@ namespace EventCatalogApi.Data
                 e.Property(c => c.Price)
                     .IsRequired();
 
+                e.HasOne(c => c.CatalogFormat)
+                    .WithMany()
+                    .HasForeignKey(c => c.CatalogFormatId);
+
                 e.HasOne(c => c.CatalogCategory)
                     .WithMany()
                     .HasForeignKey(c => c.CatalogCategoryId);
 
-                e.HasOne(c => c.CatalogFormat)
-                    .WithMany()
-                    .HasForeignKey(c => c.CatalogFormatId);
+
 
             });
         }

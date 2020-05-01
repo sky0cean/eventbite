@@ -18,7 +18,9 @@ namespace WebMVC.Services
         public CatalogService(IConfiguration config,
             IHttpClient client)
         {
-            _baseUri = $"{config["catalogUrl"]}/api/catalog/";
+
+            //It was catalogUrl
+            _baseUri = $"{config["CatalogUrl"]}/api/catalog/";
             _client = client;
         }
         public async Task<Catalog> GetCatalogItemsAsync(int page, int size,
@@ -28,34 +30,6 @@ namespace WebMVC.Services
                                     page, size, category, format);
             var dataString = await _client.GetStringAsync(catalogItemsUri);
             return JsonConvert.DeserializeObject<Catalog>(dataString);
-        }
-
-        public async Task<IEnumerable<SelectListItem>> GetCategoriesAsync()
-        {
-            var categoryUri = ApiPaths.Catalog.GetAllCategories(_baseUri);
-            var dataString = await _client.GetStringAsync(categoryUri);
-            var items = new List<SelectListItem>
-            {
-                new SelectListItem
-                {
-                    Value = null,
-                    Text = "All",
-                    Selected = true
-                }
-            };
-            var categories = JArray.Parse(dataString);
-            foreach(var category in categories)
-            {
-                items.Add(
-                    new SelectListItem
-                    {
-                        Value = category.Value<string>("id"),
-                        Text = category.Value<string>("category")
-                    }
-                );
-            }
-
-            return items;
         }
 
         public async Task<IEnumerable<SelectListItem>> GetFormatsAsync()
@@ -79,6 +53,34 @@ namespace WebMVC.Services
                     {
                         Value = format.Value<string>("id"),
                         Text = format.Value<string>("format")
+                    }
+                );
+            }
+
+            return items;
+        }
+
+        public async Task<IEnumerable<SelectListItem>> GetCategoriesAsync()
+        {
+            var categoryUri = ApiPaths.Catalog.GetAllCategories(_baseUri);
+            var dataString = await _client.GetStringAsync(categoryUri);
+            var items = new List<SelectListItem>
+            {
+                new SelectListItem
+                {
+                    Value = null,
+                    Text = "All",
+                    Selected = true
+                }
+            };
+            var categories = JArray.Parse(dataString);
+            foreach (var category in categories)
+            {
+                items.Add(
+                    new SelectListItem
+                    {
+                        Value = category.Value<string>("id"),
+                        Text = category.Value<string>("category")
                     }
                 );
             }

@@ -27,5 +27,13 @@ namespace EventCatalogApi.Controllers
             var buffer = System.IO.File.ReadAllBytes(path);
             return File(buffer, "image/jpeg");
         }
+
+        // If you want to use id for the different API, you will need to change HttpGet like below to differenciate
+        //[HttpGet("getname/{id}")]
+        //public IActionResult GetName(int id)
+        //{
+
+        //}
+
     }
 }
