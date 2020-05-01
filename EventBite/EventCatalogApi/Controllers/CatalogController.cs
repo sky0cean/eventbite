@@ -50,28 +50,32 @@ namespace EventCatalogApi.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/format/{catalogFormatId}/category/{catelogCategoryId:int?}")]
+        [Route("[action]/format/{catalogFormatId}/category/{catalogCategoryId}")]
         public async Task<IActionResult> Items(
-            int catalogFormatId,
-            int? catalogCategoryId,
-            [FromQuery]int pageIndex = 0,
-            [FromQuery]int pageSize = 9)
+        int? catalogFormatId,
+        int? catalogCategoryId,
+        [FromQuery]int pageIndex = 0,
+        [FromQuery]int pageSize = 9)
         {
             var root = (IQueryable<CatalogItem>)_context.CatalogItems;
-            root = root.Where(c => c.CatalogFormatId == catalogFormatId);
-
+            if (catalogFormatId.HasValue)
+            {
+                root = root.Where(c => c.CatalogFormatId == catalogFormatId);
+            }
             if (catalogCategoryId.HasValue)
             {
                 root = root.Where(c => c.CatalogCategoryId == catalogCategoryId);
             }
 
+
             var itemsCount = await root.LongCountAsync();
 
             var items = await root
-                               .OrderBy(c => c.Name)
-                               .Skip(pageIndex * pageSize)
-                               .Take(pageSize)
-                               .ToListAsync();
+                                .OrderBy(c => c.Name)
+                                .Skip(pageIndex * pageSize)
+                                .Take(pageSize)
+                                .ToListAsync();
+
             items = ChangePictureUrl(items);
 
             var model = new PaginatedItemsViewModel<CatalogItem>
@@ -83,6 +87,7 @@ namespace EventCatalogApi.Controllers
             };
             return Ok(model);
         }
+
 
 
         [HttpGet]
