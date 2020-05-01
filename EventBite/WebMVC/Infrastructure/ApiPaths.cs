@@ -13,6 +13,7 @@ namespace WebMVC.Infrastructure
                 int page, int take, int? category, int? format)
             {
                 var filterQs = "";
+
                 if(format.HasValue)
                 {
                     var categoryQs = (category.HasValue) ? category.Value.ToString() : string.Empty;
