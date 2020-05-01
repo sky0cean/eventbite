@@ -32,7 +32,8 @@ namespace WebMVC.Infrastructure
 
             public static string GetAllCategories(string baseUri)
             {
-                return $"{baseUri}catalogCategories";
+                //It was catalog"C"ategory 
+                return $"{baseUri}catalogcategories";
             }
         }
 
