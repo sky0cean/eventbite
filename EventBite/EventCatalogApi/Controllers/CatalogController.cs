@@ -50,18 +50,17 @@ namespace EventCatalogApi.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/format/{catalogFormatId}/category/{catalogCategoryId}")]
+        [Route("[action]/format/{catalogFormatId}/category/{catalogCategoryId:int?}")]
         public async Task<IActionResult> Items(
-        int? catalogFormatId,
+        int catalogFormatId,
         int? catalogCategoryId,
         [FromQuery]int pageIndex = 0,
         [FromQuery]int pageSize = 9)
         {
             var root = (IQueryable<CatalogItem>)_context.CatalogItems;
-            if (catalogFormatId.HasValue)
-            {
+
                 root = root.Where(c => c.CatalogFormatId == catalogFormatId);
-            }
+            
             if (catalogCategoryId.HasValue)
             {
                 root = root.Where(c => c.CatalogCategoryId == catalogCategoryId);

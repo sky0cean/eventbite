@@ -42,7 +42,7 @@ namespace EventCatalogApi.Data
                 new CatalogItem { CatalogCategoryId=5, CatalogFormatId=3, Description = "Experience the culture beauty and spirit of the Polynesian Islands.", Name = "polynesian culture festival", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/6" },
                 new CatalogItem { CatalogCategoryId=7, CatalogFormatId=6, Description = "The premiere 42.195K paint race. Live for the moments you can’t put into words.", Name = "Color run! 2020", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/7" },
                 new CatalogItem { CatalogCategoryId=8, CatalogFormatId=1, Description = "Let's take good care of our animals.", Name = "PET CLASS 2020", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/8" },
-                new CatalogItem { CatalogCategoryId=4, CatalogFormatId=3, Description = "All Locations, United States, Europe, Asia.  The World's Hottest Music Festival. Summer should get a speeding ticket.", Name = "Summer Music Festival 2020", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/9" },
+                new CatalogItem { CatalogCategoryId=4, CatalogFormatId=3, Description = "FUN AND GAMES AWAIT! The World's Hottest Festival. Summer should get a speeding ticket.", Name = "IOWA STATE FAIR 2020", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/9" },
                 new CatalogItem { CatalogCategoryId=6, CatalogFormatId=3, Description = "World's biggest hot-air baloon festival in South Carolina. We rise by lifting others.", Name = "International Balloon Fiesta 2020", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/10" },
                 new CatalogItem { CatalogCategoryId=1, CatalogFormatId=1, Description = "The Academy of Online Education present", Name = "Basic Web Develop classes.", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/11" },
                 new CatalogItem { CatalogCategoryId=4, CatalogFormatId=3, Description = "New York Summer Rock Festival is a free, outdoor festival of the arts held each year in Bryant Park ", Name = "New York Summer Rock Festival", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/12" },
@@ -57,11 +57,11 @@ namespace EventCatalogApi.Data
                 new CatalogItem { CatalogCategoryId=9, CatalogFormatId=3, Description = "Eveything you need to know about Mardi Gras in New Mexico. This year, it is happening in New Mexico.", Name = "Mardi Gras in New Mexico 2020", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/21" },
                 new CatalogItem { CatalogCategoryId=2, CatalogFormatId=1, Description = "Re-think your food. First, we eat, then we can do everything else.", Name = "Discover your way to gourmet", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/22" },
                 new CatalogItem { CatalogCategoryId=2, CatalogFormatId=1, Description = "Kyobi Cooking school.", Name = "Season it jut right!", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/23" },
-                new CatalogItem { CatalogCategoryId=9, CatalogFormatId=1, Description = "The only bad workout is the one that didn’t happen.", Name = "Yoga yourself", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/24" },
+                new CatalogItem { CatalogCategoryId=7, CatalogFormatId=1, Description = "The only bad workout is the one that didn’t happen.", Name = "Yoga yourself", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/24" },
                 new CatalogItem { CatalogCategoryId=8, CatalogFormatId=1, Description = "A good teacher can inspire hope, ignite the imagination, and instill a love of learning. ― Brad Henry", Name = "Art class", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/25" },
-                new CatalogItem { CatalogCategoryId=6, CatalogFormatId=1, Description = "A brighter future for all.", Name = "Pre-K, summar school", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/26" },
+                new CatalogItem { CatalogCategoryId=5, CatalogFormatId=1, Description = "A brighter future for all.", Name = "Pre-K, summar school", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/26" },
                 new CatalogItem { CatalogCategoryId=7, CatalogFormatId=1, Description = "Fall in love with taking care of yourself.", Name = "Fitness with Alice", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/27" },
-                new CatalogItem { CatalogCategoryId=7, CatalogFormatId=1, Description = "WESTGROVE HALL, AUSTIN, TX", Name = "DAWSON MAKEUP MASTERCLASS", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/28" },
+                new CatalogItem { CatalogCategoryId=9, CatalogFormatId=1, Description = "WESTGROVE HALL, AUSTIN, TX", Name = "DAWSON MAKEUP MASTERCLASS", Price = 0.00M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/28" },
                 new CatalogItem { CatalogCategoryId=8, CatalogFormatId=3, Description = "Anime Weekend New York is the largest Anime Convention in the eastcoast.", Name = "Anime Weekend 2020", Price = 12.99M, PictureUrl = "http://externalcatalogbaseurltobereplaced/api/pic/29" }
             };
 
@@ -71,15 +71,15 @@ namespace EventCatalogApi.Data
         {
             return new List<CatalogFormat>
             {
-                new CatalogFormat{ Format = "Class"},
-                new CatalogFormat{ Format = "Conference"},
-                new CatalogFormat{ Format = "Festival"},
-                new CatalogFormat{ Format = "Party"},
-                new CatalogFormat{ Format = "Networking"},
-                new CatalogFormat{ Format = "Race"},
-                new CatalogFormat{ Format = "Seminar"},
-                new CatalogFormat{ Format = "Tour"},
-                new CatalogFormat{ Format = "Game"}
+                new CatalogFormat{ Format = "1 Class"},
+                new CatalogFormat{ Format = "2 Conference"},
+                new CatalogFormat{ Format = "3 Festival"},
+                new CatalogFormat{ Format = "4 Party"},
+                new CatalogFormat{ Format = "5 Networking"},
+                new CatalogFormat{ Format = "6 Race"},
+                new CatalogFormat{ Format = "7 Seminar"},
+                new CatalogFormat{ Format = "8 Tour"},
+                new CatalogFormat{ Format = "9 Game"}
             };
         }
 
@@ -87,15 +87,15 @@ namespace EventCatalogApi.Data
         {
             return new List<CatalogCategory>
             {
-                new CatalogCategory{ Category = "Business"},
-                new CatalogCategory{ Category = "Food & Drink"},
-                new CatalogCategory{ Category = "Health"},
-                new CatalogCategory{ Category = "Music"},
-                new CatalogCategory{ Category = "Family & Education"},
-                new CatalogCategory{ Category = "Travel & Outdoor"},
-                new CatalogCategory{ Category = "Sports & Fitness"},
-                new CatalogCategory{ Category = "Hobbies"},
-                new CatalogCategory{ Category = "Other"}
+                new CatalogCategory{ Category = "1 Business"},
+                new CatalogCategory{ Category = "2 Food & Drink"},
+                new CatalogCategory{ Category = "3 Health"},
+                new CatalogCategory{ Category = "4 Music"},
+                new CatalogCategory{ Category = "5 Family & Education"},
+                new CatalogCategory{ Category = "6 Travel & Outdoor"},
+                new CatalogCategory{ Category = "7 Sports & Fitness"},
+                new CatalogCategory{ Category = "8 Hobbies"},
+                new CatalogCategory{ Category = "9 Other"}
             };
         }
     }
