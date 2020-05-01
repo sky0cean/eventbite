@@ -50,18 +50,16 @@ namespace EventCatalogApi.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/format/{catalogFormatId}/category/{catelogCategoryId}")]
+        [Route("[action]/format/{catalogFormatId}/category/{catelogCategoryId:int?}")]
         public async Task<IActionResult> Items(
-            int? catalogFormatId,
+            int catalogFormatId,
             int? catalogCategoryId,
             [FromQuery]int pageIndex = 0,
             [FromQuery]int pageSize = 9)
         {
             var root = (IQueryable<CatalogItem>)_context.CatalogItems;
-            if (catalogFormatId.HasValue)
-            {
-                root = root.Where(c => c.CatalogFormatId == catalogFormatId);
-            }
+            root = root.Where(c => c.CatalogFormatId == catalogFormatId);
+
             if (catalogCategoryId.HasValue)
             {
                 root = root.Where(c => c.CatalogCategoryId == catalogCategoryId);
@@ -84,6 +82,41 @@ namespace EventCatalogApi.Controllers
                 Data = items
             };
             return Ok(model);
+        }
+
+
+        [HttpGet]
+        [Route("[action]/format/all/category/{catalogCategoryId:int?}")]
+        public async Task<IActionResult> Items(
+            int? catalogCategoryId,
+            [FromQuery]int pageIndex = 0, 
+            [FromQuery]int pageSize = 9)
+        {
+            var root = (IQueryable<CatalogItem>)_context.CatalogItems;
+
+            if (catalogCategoryId.HasValue)
+            {
+                root = root.Where(c => c.CatalogCategoryId == catalogCategoryId);
+            }
+
+            var itemsCount = await root.LongCountAsync();
+
+            var items = await root
+                               .OrderBy(c => c.Name)
+                               .Skip(pageIndex * pageSize)
+                               .Take(pageSize)
+                               .ToListAsync();
+            items = ChangePictureUrl(items);
+
+            var model = new PaginatedItemsViewModel<CatalogItem>
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Count = itemsCount,
+                Data = items
+            };
+            return Ok(model);
+
         }
 
         private List<CatalogItem> ChangePictureUrl(List<CatalogItem> items)

@@ -17,8 +17,7 @@ namespace EventCatalogApi.Data
         public DbSet<CatalogCategory> CatalogCategories { get; set; }
         public DbSet<CatalogFormat> CatalogFormats { get; set; }
         public DbSet<CatalogItem> CatalogItems { get; set; }
-        public DbSet<CatalogDate> CatalogDates { get; set; }
-        public DbSet<CatalogPrice> CatalogPrices { get; set; }
+
 
 
         //Model = Table
