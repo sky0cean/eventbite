@@ -70,20 +70,17 @@
     @if (Model.CatalogItems.Count() > 0)
     {
         <partial name="_pagination" for="PaginationInfo" />
-        @*@Html.Partial("_pagination", Model.PaginationInfo)*@
 
         <div class="esh-catalog-items row">
             @foreach (var catalogItem in Model.CatalogItems)
             {
                 <div class="esh-catalog-item col-md-4">
                     <partial name="_product" model="catalogItem" />
-                    @*@Html.Partial("_product", catalogItem)*@
                 </div>
             }
         </div>
 
         <partial name="_pagination" for="PaginationInfo" />
-        @*@Html.Partial("_pagination", Model.PaginationInfo)*@
     }
     else
     {

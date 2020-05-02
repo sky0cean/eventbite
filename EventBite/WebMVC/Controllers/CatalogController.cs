@@ -20,7 +20,7 @@ namespace WebMVC.Controllers
             int? formatsFilterApplied)
         {
 
-            var itemsOnPage = 9;
+            var itemsOnPage = 2;
 
             var catalog = await _service.GetCatalogItemsAsync(page ?? 0, itemsOnPage,
                 categoriesFilterApplied, formatsFilterApplied);
@@ -35,7 +35,6 @@ namespace WebMVC.Controllers
                 {
                     ActualPage = page ?? 0,
                     TotalItems = catalog.Count,
-                    //ItemsPerPage = itemsOnPage,
                     ItemsPerPage = catalog.Data.Count,
                     TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsOnPage)
                 }   
