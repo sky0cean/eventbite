@@ -35,10 +35,12 @@ namespace WebMVC.Controllers
                 {
                     ActualPage = page ?? 0,
                     TotalItems = catalog.Count,
-                    ItemsPerPage = itemsOnPage,
+                    //ItemsPerPage = itemsOnPage,
+                    ItemsPerPage = catalog.Data.Count,
                     TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsOnPage)
                 }   
             };
+
 
             vm.PaginationInfo.Next = (vm.PaginationInfo.ActualPage == vm.PaginationInfo.TotalPages - 1) ? "is-disabled" : "";
             vm.PaginationInfo.Previous = (vm.PaginationInfo.ActualPage == 0) ? "is-disabled" : "";
