@@ -12,18 +12,20 @@ namespace WebMVC.Controllers
     public class CatalogController : Controller
     {
         private readonly ICatalogService _service;
+
         public CatalogController(ICatalogService service)
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(int? page, int? categoriesFilterApplied,
-            int? formatsFilterApplied)
+        public async Task<IActionResult> Index(int? categoriesFilterApplied,
+            int? formatsFilterApplied, int? page)
         {
 
             var itemsOnPage = 9;
 
             var catalog = await _service.GetCatalogItemsAsync(page ?? 0, itemsOnPage,
                 categoriesFilterApplied, formatsFilterApplied);
+
             var vm = new CatalogIndexViewModel
             {
                 CatalogItems = catalog.Data,
