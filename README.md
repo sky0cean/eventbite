@@ -16,7 +16,7 @@
 
 ## How to set up the app
 * Run locally using docker compose
-* See the Demovideo on YouTube from here :point_right: [https://youtu.be/OTnwQg4_vvs](https://youtu.be/OTnwQg4_vvs):tv:
+* See the Demovideo on YouTube from here :point_right: [https://youtu.be/6slKLd5x3fo](https://youtu.be/6slKLd5x3fo):tv:
 
 ## Project object 
 * Practice of 
