@@ -64,7 +64,7 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       IdentityUrl: http://192.168.1.4:6500
       DatabaseServer: mssqlserver
-      DatabaseName: Catalog2Db
+      DatabaseName: Orders2Db
       DatabaseUser: sa
       DatabasePassword: EventApi(!)
     ports:
