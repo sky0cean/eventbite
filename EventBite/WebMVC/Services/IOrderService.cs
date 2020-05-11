@@ -1,6 +1,4 @@
-﻿
-
-using WebMVC.Models.OrderModels;
+﻿using WebMVC.Models.OrderModels;
 using WebMVC.ViewModels;
 using WebMVC.Models;
 using System;
