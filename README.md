@@ -20,7 +20,8 @@
 
 ## Project object 
 * Practice of 
-* .Net microservices architecture and Docker containers.
+* .Net microservices architecture and Docker containers
+*  using ASP.NET MVC, C#, SQL Server, Redis Cache, Postman, Swagger, Docker, and Rabbit MQ
 
 ## References
 https://github.com/dotnet-architecture/eShopOnContainers
